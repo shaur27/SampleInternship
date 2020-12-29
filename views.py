@@ -217,7 +217,7 @@ def validation():
                 my_list.append(cus)
             
                 #pan validation
-                API_ENDPOINT = 'https://vsrnxr5yo0.execute-api.us-east-1.amazonaws.com/default'
+                API_ENDPOINT = 'https://*****.execute-api.us-east-1.amazonaws.com/default'
                 dataP = cus.pan_card
                 headersP = {
                     "Content-Type":"application/binary",
@@ -258,7 +258,7 @@ def validation():
             
 
                 #aadhar validation
-                API_ENDPOINT = 'https://7pogz8lql3.execute-api.us-east-1.amazonaws.com/default'
+                API_ENDPOINT = 'https://******.execute-api.us-east-1.amazonaws.com/default'
                 data = cus.aadhar_card_front
                 headers = {
                     "Content-Type":"application/binary",
@@ -563,14 +563,14 @@ def authenticate_google_docs():
     credentials = SignedJwtAssertionCredentials('shauryashekhar1947@gmail.com', SIGNED_KEY, scope)
 
     data = {
-        'refresh_token' : '1//0gdGvqcOT3-i5CgYIARAAGBASNwF-L9IrlUMPImaQH5hehrXEsKQCgFce-nkWG7C07RISy41_StEbTwU_QbD0Bdmz1qFoTiiJiFc',
-        'client_id' : '632610458429-u09vk9t5u0ekga09s5c897il8btthtj0.apps.googleusercontent.com',
-        'client_secret' : 'A1PcZoG2UhnPcokR1eGaSi76',
+        'refresh_token' : '*******-nkWG7C07RISy41_StEbTwU_QbD0Bdmz1qFoTiiJiFc',
+        'client_id' : '*****.apps.googleusercontent.com',
+        'client_secret' : '*****',
         'grant_type' : 'refresh_token',
     }
 
     r = requests.post('https://accounts.google.com/o/oauth2/token', data = data)
-    credentials.access_token = ast.literal_eval(r.text)['ya29.a0AfH6SMDJWj735URE5CTx6VA9jyUDvix38uVz4nIoUg8zmfyoGbDILjd2ok7jBGqqXBtNxQx_BjoqrVuqYX3uTLQrP_79-wuXKf8P4MpromYgTLW5yBF0gkbfRs8_GwtrW3o_mlwoUrS7SGyh0D5mD4kucrvGkWk8Uac']
+    credentials.access_token = ast.literal_eval(r.text)['ya29.a0*******rvGkWk8Uac']
 
     gc = gspread.authorize(credentials)
     sh = gc.open("sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/18COXF7tx_E21L1nMu1ZV2Kj17rX2kuk4SQlpslOTk58/edit#gid=0')")
